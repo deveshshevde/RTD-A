@@ -32,6 +32,7 @@ Where:
 
 The FOPDT model balances simplicity and representational adequacy, making it a cornerstone in fields like chemical and mechanical engineering, as well as process control.
 
+## 6. Discrete form
 
 To convert the First-Order-Plus-Dead-Time (FOPDT) model into its discrete form using the method you've described, we use the following equation for the discrete system:
 
