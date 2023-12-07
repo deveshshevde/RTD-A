@@ -19,8 +19,8 @@ $$ G(s) = \frac{K}{\tau s + 1} e^{-\theta s} $$
 Where:
 - `G(s)` is the transfer function in the Laplace domain.
 - `K` is the process gain.
-- `\tau` is the time constant.
-- `\theta` is the dead-time or delay time.
+- `tau` is the time constant.
+- `theta` is the dead-time or delay time.
 - `s` is the complex frequency variable in the Laplace transform.
 
 ## 4. Applications in Control Systems
