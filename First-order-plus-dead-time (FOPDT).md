@@ -31,3 +31,31 @@ Where:
 - While useful, the FOPDT model may not accurately represent systems with more complex dynamics, such as non-linearities or varying time delays.
 
 The FOPDT model balances simplicity and representational adequacy, making it a cornerstone in fields like chemical and mechanical engineering, as well as process control.
+
+
+To convert the First-Order-Plus-Dead-Time (FOPDT) model into its discrete form using the method you've described, we use the following equation for the discrete system:
+
+y(k + 1) = a * y(k) + b * u(k - m)
+
+
+
+Where:
+- `y(k)` is the output at time step `k`.
+- `u(k - m)` is the input delayed by `m` time steps, representing the dead time.
+- `a` and `b` are coefficients derived from the continuous FOPDT model parameters.
+- `m` is the discrete equivalent of the dead time `θ`.
+- `k` represents the current time step (0, 1, 2, ...).
+
+The coefficients `a` and `b` are calculated from the continuous FOPDT model parameters as follows:
+
+1. `a = e^(-Δt/τ)`
+2. `b = K * (1 - e^(-Δt/τ))`
+3. `m = round(θ/Δt)`
+
+Here, `Δt` is the sampling time interval, `K` is the process gain, `τ` is the time constant, and `θ` is the dead time in the original FOPDT model.
+
+This approach assumes:
+- Exponential decay is used to approximate the continuous process in the discrete domain.
+- The dead time `θ` is approximated as an integer multiple of the sampling time `Δt`, which is determined by rounding `θ/Δt`.
+
+Would you like a numerical example to illustrate this conversion process?
